@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roof Lab | Roof Types Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">ROOF<span>LAB</span></div>
+    <span class="header-tag">Architecture Learning Game</span>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME SCREEN -->
+    <section id="home-screen" class="screen">
+      <div class="home-icon">⌂</div>
+      <p class="eyebrow">VISUAL IDENTIFICATION QUIZ</p>
+      <h1>Know Your <span>Roofs?</span></h1>
+      <p class="description">
+        Explore 20 roof designs. Study their shapes,
+        test your knowledge, and improve your score.
+      </p>
+
+      <div class="home-card">
+        <h2>Choose Your Challenge</h2>
+
+        <div class="mode-grid">
+          <button class="mode-btn" data-length="10" disabled>
+            <strong>10</strong>
+            <span>Quick Quiz</span>
+          </button>
+
+          <button class="mode-btn" data-length="20" disabled>
+            <strong>20</strong>
+            <span>Full Challenge</span>
+          </button>
+        </div>
+
+        <button id="study-open" class="secondary-btn" disabled>
+          Study All Roof Types
+        </button>
+
+        <p id="image-status" class="status">
+          Loading roof illustrations...
+        </p>
+      </div>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section id="quiz-screen" class="screen" hidden>
+
+      <div class="quiz-top">
+        <div>
+          <p class="eyebrow">IDENTIFY THE ROOF</p>
+          <h2>What roof type is this?</h2>
+        </div>
+
+        <div class="score-box">
+          <small>SCORE</small>
+          <strong id="score">0</strong>
+        </div>
+      </div>
+
+      <div class="progress-info">
+        <span id="question-count">Question 1 / 10</span>
+        <span id="streak">0 Streak</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progress-fill"></div>
+      </div>
+
+      <div class="roof-display">
+        <img id="roof-image" src="" alt="Identify this roof">
+        <span class="image-caption">LOOK AT THE ROOF SHAPE</span>
+      </div>
+
+      <p class="answer-heading">Select the correct roof type</p>
+      <div id="options" class="options"></div>
+
+      <div id="feedback" class="feedback" aria-live="polite" hidden>
+      </div>
+
+      <button id="next-btn" class="primary-btn" hidden>
+        Next Question →
+      </button>
+
+      <p class="keyboard-help">
+        Tip: Look at the shape carefully.
+      </p>
+    </section>
+
+    <!-- RESULTS SCREEN -->
+    <section id="result-screen" class="screen" hidden>
+      <div class="result-card">
+        <div class="trophy">★</div>
+        <p class="eyebrow">CHALLENGE COMPLETE</p>
+        <h1 id="result-title">Well Done!</h1>
+
+        <div class="result-score" id="final-percent">0%</div>
+        <p id="result-detail"></p>
+
+        <div class="result-stats">
+          <div>
+            <strong id="correct-total">0</strong>
+            <span>Correct Answers</span>
+          </div>
+          <div>
+            <strong id="best-streak">0</strong>
+            <span>Best Streak</span>
+          </div>
+        </div>
+
+        <div id="review-area" class="review-area" hidden>
+          <h3>Roofs to Review</h3>
+          <div id="review-list" class="review-list"></div>
+        </div>
+
+        <button id="replay-btn" class="primary-btn">
+          Play Again
+        </button>
+
+        <button id="result-home" class="secondary-btn">
+          Back to Home
+        </button>
+      </div>
+    </section>
+
+    <!-- STUDY SCREEN -->
+    <section id="study-screen" class="screen" hidden>
+      <div class="study-header">
+        <div>
+          <p class="eyebrow">LEARNING LIBRARY</p>
+          <h1>Roof Type <span>Guide</span></h1>
+          <p>Study the 20 illustrations and their names.</p>
+        </div>
+
+        <button id="study-back" class="secondary-btn">
+          Back
+        </button>
+      </div>
+
+      <div id="study-grid" class="study-grid"></div>
+    </section>
+
+  </main>
+
+  <footer>ROOF LAB · Learn your roofs.</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
