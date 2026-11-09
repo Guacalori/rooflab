@@ -69,6 +69,10 @@ function startGame(total) {
 function loadQuestion() {
     answered = false;
 
+    // Reset the image border to its default color
+    const roofDisplay = document.querySelector(".roof-display");
+    roofDisplay.classList.remove("correct", "wrong");
+
     const roof = questions[currentQuestion];
 
     document.getElementById("roof-image").src = roof.image;
